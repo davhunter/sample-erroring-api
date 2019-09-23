@@ -1,0 +1,13 @@
+#%RAML 1.0 DataType
+type: object
+properties:
+  code:
+    type: integer
+    required: true
+  message:
+    type: string
+    required: true
+examples:
+  customerNotFound: !include ../examples/error-404.json
+  badRequest: !include ../examples/error-400.json
+  systemProblem: !include ../examples/error-500.json

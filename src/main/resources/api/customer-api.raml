@@ -3,8 +3,25 @@ title: Customer API
 baseUri: http://localhost:8081/customer-api
 version: 1.0
 
+traits:
+  returnsErrors:
+    responses:
+      400:
+        body:
+          application/json:
+            type: !include ../types/Error.raml
+      404:
+        body:
+          application/json:
+            type: !include ../types/Error.raml
+      500:
+        body:
+          application/json:
+            type: !include ../types/Error.raml
+            
 /customers:
   get:
+    is: [returnsErrors]
     description: Returns a set of customers
     responses:
       200:
@@ -13,6 +30,7 @@ version: 1.0
             type: !include ../types/Customers.raml
   /{id}:
     get:
+      is: [returnsErrors]
       description: Returns a specific customer
       responses:
         200:
