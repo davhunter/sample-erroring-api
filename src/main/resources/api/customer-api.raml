@@ -1,0 +1,21 @@
+#%RAML 1.0
+title: Customer API
+baseUri: http://localhost:8081/customer-api
+version: 1.0
+
+/customers:
+  get:
+    description: Returns a set of customers
+    responses:
+      200:
+        body:
+          application/json:
+            type: !include ../types/Customers.raml
+  /{id}:
+    get:
+      description: Returns a specific customer
+      responses:
+        200:
+          body:
+            application/json:
+              type: !include ../types/Customer.raml

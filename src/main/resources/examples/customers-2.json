@@ -1,0 +1,13 @@
+{
+	"count": 2,
+	"customers": [
+		{
+			"name": "David Hunter",
+			"type": "Existing"
+		},
+		{
+			"name": "Alfred Neuman",
+			"type": "Expired"
+		}
+	]
+}

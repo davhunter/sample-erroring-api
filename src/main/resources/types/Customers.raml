@@ -1,0 +1,12 @@
+#%RAML 1.0 DataType
+properties:
+  count:
+    type: integer
+    required: true
+  customers:
+    type: array
+    items: !include Customer.raml
+    required: true
+examples:
+  twoCustomers: !include ../examples/customers-2.json
+  oneCustomer: !include ../examples/customers-1.json

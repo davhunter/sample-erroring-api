@@ -1,0 +1,12 @@
+#%RAML 1.0 DataType
+type: object
+properties:
+  name:
+    type: string
+    required: true
+  customerType:
+    type: string
+    enum: [New, Existing, Expired]
+    required: false
+examples:
+  existingCustomer: !include ../examples/existing-customer.json
